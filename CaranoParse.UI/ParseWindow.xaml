@@ -1,0 +1,41 @@
+﻿<Window x:Class="CaranoParse.UI.ParseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CaranoParse.UI"
+        mc:Ignorable="d"
+        Title="Parse ID and Password from URL" Height="150" Width="400"
+        WindowStyle="ToolWindow">
+    <StackPanel>
+        <TextBlock Text="Enter your timetable's public access URL:"/>
+        <TextBox Name="Box_Url" TextChanged="Box_Url_TextChanged"/>
+        <Grid Name="FormGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Timetable ID: " Grid.Row="0" Grid.Column="0"
+                   ToolTip="ID of your timetable, provided by your server"/>
+            <TextBlock Text="Password: " Grid.Row="1" Grid.Column="0"
+                   ToolTip="Your timetable's user password"/>
+
+            <TextBox Name="Block_Id" Grid.Row="0" Grid.Column="1" IsReadOnly="True"/>
+            <TextBox Name="Block_Password" Grid.Row="1" Grid.Column="1" IsReadOnly="True"/>
+        </Grid>
+        <Button Name="OkButton" IsEnabled ="False" IsDefault="True" Content="OK" Click="Button_Click"/>
+    </StackPanel>
+</Window>

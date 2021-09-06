@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CaranoParse\CaranoParse.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\SampleData\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == net472 ">
+    <PackageReference Include="Mono.HttpUtility" Version="1.0.0.1" />
+  </ItemGroup>
+
+</Project>
